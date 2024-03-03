@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Actuals",
+    "version": "0.1",
+    "description": "Actuals for Zerodha is not related to Zerodha or any of its susidaries, it an open source initiative by me for enhancing my own personal experience with the zerodha/kite UI",
+    "content_scripts": [
+        {
+          "js": ["scripts/holdings.js"],
+          "matches": [
+            "https://kite.zerodha.com/holdings"
+          ]
+        }
+      ]
+}
