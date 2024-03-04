@@ -9,6 +9,12 @@
           "matches": [
             "https://kite.zerodha.com/holdings"
           ]
+        },
+        {
+          "js": ["scripts/positions.js"],
+          "matches": [
+            "https://kite.zerodha.com/positions"
+          ]
         }
       ]
 }
