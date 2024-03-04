@@ -122,7 +122,9 @@ function delayedFunction() {
   const tables = document.querySelectorAll("table");
   if (tables) {
     console.log("Table found");
+    var count = 0;
     for (const table of tables) {
+      count += 1;
       console.log(table);
       theadTr = table.querySelector("thead tr");
       positions = table.querySelectorAll("tbody tr");
@@ -181,8 +183,12 @@ function delayedFunction() {
       }
 
       // Create total charges table footer
-      totalCharges = sumTableColumn(table, 8);
-      footerRow = table.querySelector("tfoot tr");
+      totalCharges = sumTableColumn(table, count == 2 ? 7 : 8);
+      var footerRow = table.querySelector("tfoot tr");
+      var fourthTd = footerRow.querySelectorAll("td")[4];
+      if (fourthTd) {
+        fourthTd.setAttribute("colspan", 1);
+      }
       footerCell = document.createElement("td");
       footerCell.classList.add("charges", "text-red");
       footerCell.textContent = totalCharges.toFixed(2);
@@ -193,7 +199,7 @@ function delayedFunction() {
       );
 
       // Create total actual table footer
-      actual = sumTableColumn(table, 9);
+      actual = sumTableColumn(table, count == 2 ? 8 : 9);
       footerRow = table.querySelector("tfoot tr");
       footerCell = document.createElement("td");
       footerCell.classList.add(
