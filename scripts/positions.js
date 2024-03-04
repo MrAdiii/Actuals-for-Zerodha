@@ -173,11 +173,7 @@ function delayedFunction() {
         newCell = document.createElement("td");
         newCell.classList.add(
           "actuals",
-          charges.net_profit < 0
-            ? "text-red"
-            : charges.net_profit >= 0
-            ? "text-green"
-            : ""
+          charges.net_profit < 0 ? "text-red" : "text-green"
         );
         newCell.textContent = charges.net_profit;
 
@@ -202,7 +198,7 @@ function delayedFunction() {
       footerCell = document.createElement("td");
       footerCell.classList.add(
         "actuals",
-        actual < 0 ? "text-red" : actual >= 0 ? "text-green" : ""
+        actual < 0 ? "text-red" : "text-green"
       );
       footerCell.textContent = actual.toFixed(2);
       // Insert total actual in footer

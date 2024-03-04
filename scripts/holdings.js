@@ -167,11 +167,7 @@ function delayedFunction() {
       newCell = document.createElement("td");
       newCell.classList.add(
         "actuals",
-        charges.net_profit < 0
-          ? "text-red"
-          : charges.net_profit >= 0
-          ? "text-green"
-          : ""
+        charges.net_profit < 0 ? "text-red" : "text-green"
       );
       newCell.textContent = charges.net_profit;
 
@@ -194,10 +190,7 @@ function delayedFunction() {
     actual = sumTableColumn(table, 9);
     footerRow = table.querySelector("tfoot tr");
     footerCell = document.createElement("td");
-    footerCell.classList.add(
-      "actuals",
-      actual < 0 ? "text-red" : actual >= 0 ? "text-green" : ""
-    );
+    footerCell.classList.add("actuals", actual < 0 ? "text-red" : "text-green");
     footerCell.textContent = actual;
     // Insert total actual in footer
     footerRow.insertBefore(
